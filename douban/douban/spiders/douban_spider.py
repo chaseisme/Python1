@@ -22,7 +22,7 @@ class DoubanSpiderSpider(scrapy.Spider):
             douban_items["movie_name"] = m_item.xpath(".//div[@class='info']//span[@class='title'][1]/text()").extract_first()
             #获取电影的星级
             douban_items["movie_star"] = m_item.xpath(".//div[@class='star']//span[@class='rating_num']/text()").extract_first()
-            #获取电影的描述
+            #获取电影的描述信息
             douban_items["movie_des"] = m_item.xpath(".//p[@class='quote']//span[@class='inq']/text()").extract()
             yield douban_items
 
